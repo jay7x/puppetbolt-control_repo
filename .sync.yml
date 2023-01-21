@@ -1,0 +1,11 @@
+'spec/spec_helper.rb':
+  strict_level: ':error'
+'.gitignore':
+  paths:
+    - .resource_types
+    - .modules
+    - .task_cache.json
+    - .plan_cache.json
+    - .rerun.json
+    - bolt-debug.log
+    - Puppetfile
