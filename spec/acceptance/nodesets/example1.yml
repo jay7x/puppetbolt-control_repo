@@ -1,0 +1,19 @@
+---
+HOSTS:
+  example1:
+    docker_cmd:
+    - "/sbin/init"
+    image: ubuntu:20.04
+    docker_image_commands:
+    - cp /bin/true /sbin/agetty
+    - apt-get install -y net-tools wget locales iproute2 gnupg
+    - locale-gen en_US.UTF-8
+    - echo LANG=en_US.UTF-8 > /etc/default/locale
+    platform: ubuntu-20.04-aarch64
+    hypervisor: docker
+    docker_preserve_image: true
+    roles:
+    - agent
+CONFIG:
+  nfs_server: none
+  consoleport: 443

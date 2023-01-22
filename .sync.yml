@@ -1,5 +1,13 @@
 'spec/spec_helper.rb':
   strict_level: ':error'
+Gemfile:
+  required:
+    ':system_tests':
+      - gem: voxpupuli-acceptance
+Rakefile:
+  requires:
+    - require: 'voxpupuli/acceptance/rake'
+      conditional: 'not Rake::Task.task_defined?(:beaker)'
 '.gitignore':
   paths:
     - .resource_types
