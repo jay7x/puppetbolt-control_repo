@@ -1,0 +1,5 @@
+---
+profile::common::packages::versions:
+  snapd: purged
+  multipath-tools: purged
+  modemmanager: purged

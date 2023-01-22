@@ -1,0 +1,13 @@
+---
+profile::common::packages::versions:
+  rsync: installed
+  tcpdump: installed
+  vim: installed
+  screen: installed
+
+# Hiera lookup options
+# https://www.puppet.com/docs/puppet/7/hiera_merging.html
+lookup_options:
+  # Here we need to merge hashes
+  profile::common::packages::versions:
+    merge: hash
