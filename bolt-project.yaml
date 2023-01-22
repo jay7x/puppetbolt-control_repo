@@ -1,0 +1,13 @@
+---
+name: control_repo
+
+apply-settings:
+  show_diff: true
+
+modulepath:
+  - site-modules
+
+# See `bolt module show` for modules bundled with Bolt
+# Add required modules here and run `bolt module install --force`
+modules:
+  - puppetlabs/stdlib
