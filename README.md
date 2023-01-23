@@ -66,6 +66,96 @@ To use this repository you need the following:
 
 ## Advanced usage
 
+### Directory structure
+
+```text
+├── .devcontainer                     # PDK: vscode devcontainer settings
+│   ├── Dockerfile
+│   ├── README.md
+│   └── devcontainer.json
+├── .editorconfig                     # See https://editorconfig.org/
+├── .fixtures.yml                     # PDK: fixtures config
+├── .gitattributes                    # PDK: git attributes config
+├── .gitignore                        # PDK: files to ignore in git
+├── .gitlab-ci.yml                    # PDK: Gitlab CI config
+├── .pdkignore                        # PDK: files to ignore in module tarball
+├── .puppet-lint.rc                   # PDK: puppet-lint config
+├── .rspec                            # PDK: rspec config
+├── .rubocop.yml                      # PDK: rubocop config
+├── .sync.yml                         # PDK: pdk-templates config
+├── .travis.yml                       # PDK: Travis CI config
+├── .vscode                           # PDK: VSCode config
+│   └── extensions.json
+├── .yardopts                         # PDK: YARD config (puppet strings)
+├── CHANGELOG.md                      # PDK: ChangeLog template
+├── Gemfile                           # PDK: Gemfile
+├── LICENSE                           # Apache 2.0 License text
+├── README.md                         # This README
+├── Rakefile                          # PDK: Rake config
+├── appveyor.yml                      # PDK: AppVeyor CI config
+├── bolt-project.yaml                 # Bolt: main Bolt config
+├── data                              # Hiera data directory
+│   ├── common.yaml                   # Common Hiera data goes here
+│   └── nodes                         # Per-node Hiera data goes here
+│       └── example1.yaml             # Hiera data for the `example1` host
+├── environment.conf                  # Puppet environment config
+├── hiera.yaml                        # Hiera's hierarchy definition
+├── manifests
+│   └── site.pp                       # The "main" manifest (Puppet entry-point)
+├── metadata.json                     # PDK: Puppet module metadata
+├── pdk.yaml                          # PDK: PDK config
+├── plans                             # Bolt: plans goes here
+│   └── apply.pp                      # Puppet Bolt plan to apply your manifests
+├── rakelib
+│   └── beaker-all.rake               # Rake task to run acceptance tests for every node
+├── site-modules                      # Place to store your local modules
+│   ├── hiera_classifier              # The Hiera classifier module
+│   │   └── manifests
+│   │       └── init.pp
+│   ├── profile                       # The profile module
+│   │   ├── data
+│   │   │   ├── Ubuntu.yaml           # Hiera data for Ubuntu OS
+│   │   │   └── common.yaml           # Common Hiera data
+│   │   ├── functions
+│   │   │   └── banner.pp             # Profile::Banner example function
+│   │   ├── hiera.yaml                # Module's Hiera config
+│   │   ├── manifests
+│   │   │   ├── common
+│   │   │   │   └── packages.pp       # Profile::Common::Packages example class
+│   │   │   ├── common.pp             # Profile::Common example class
+│   │   │   └── example.pp            # Profile::Example example class
+│   │   └── types
+│   │       └── ensure.pp             # Profile::Ensure example type alias
+│   └── role                          # The role module
+│       └── manifests
+│           ├── example.pp            # Role::Example role definition
+│           └── unassigned.pp         # Role::Unassigned role definition
+└── spec                              # Unit and acceptance tests directory
+    ├── acceptance                    # Beaker acceptance tests goes here
+    │   ├── example1_spec.rb          # `example1` node beaker-rspec spec
+    │   └── nodesets                  # Node definitions for Beaker acceptance tests
+    │       └── example1.yml          # `example1` node definition
+    ├── classes                       # rspec-puppet class tests goes here
+    │   └── profile
+    │       ├── common
+    │       │   └── packages_spec.rb  # Profile::Common::Package class unit tests
+    │       └── example_spec.rb       # Profile::Example class unit tests
+    ├── default_facts.yml             # PDK: default facts for unit testing
+    ├── functions
+    │   └── profile
+    │       └── banner_spec.rb        # Profile::Banner function unit test
+    ├── defines                       # rspec-puppet defined resource tests goes here
+    ├── fixtures                      # rspec-puppet fixtures
+    ├── hosts                         # rspec-puppet host tests goes here
+    │   └── example1_spec.rb          # `example1` host test
+    ├── spec_helper.rb                # PDK: unit test rspec helper
+    ├── spec_helper_acceptance.rb     # Acceptance test rspec helper
+    ├── spec_helper_local.rb          # unit test rspec helper (local additions)
+    └── type_aliases
+        └── profile
+            └── ensure_spec.rb        # Profile::Ensure type alias unit test
+```
+
 ### Hiera classifier
 
 ... to be written...
