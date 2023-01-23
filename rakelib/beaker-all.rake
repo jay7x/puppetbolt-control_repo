@@ -1,7 +1,7 @@
 namespace :beaker do
   desc 'Run all acceptance tests'
   task :all do
-    project_dir = File.expand_path(__dir__)
+    project_dir = File.expand_path(File.join(__dir__, '..'))
     nodesets = Dir.glob(File.join(project_dir, 'spec', 'acceptance', 'nodesets', '*.yml'))
     puts "Nodesets: #{nodesets.map { |x| File.basename(x) }}"
     ENV['BEAKER_debug'] = 'no'
