@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'profile::common::packages' do
+describe 'Profile::Common::Packages' do
   include_context 'clean room'
 
   packages = {

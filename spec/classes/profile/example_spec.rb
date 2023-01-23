@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'profile::example' do
+describe 'Profile::Example' do
   include_context 'clean room'
 
   on_supported_os.each do |os, os_facts|
