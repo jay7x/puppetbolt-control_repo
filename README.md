@@ -11,7 +11,21 @@
 
 This repository contains an Puppet control repository skeleton to be used with [Puppet Bolt](https://www.puppet.com/docs/bolt/latest/bolt.html). It resembles usual [control repo structure](https://github.com/puppetlabs/control-repo) with some additions. E.g. it uses [PDK](https://www.puppet.com/docs/pdk/2.x/pdk.html) for validation and unit tests and [Beaker](https://github.com/voxpupuli/beaker) for acceptance tests.
 
-Idea is to use this repository as a starting point to be adopted for your needs.
+Goals of creating this repository is to show the following:
+
+1. How to use PDK to manage a Puppet control repo.
+1. How to manage Puppet modules with Puppet Bolt.
+1. How to enable and how to write unit tests for Puppet catalog entries.
+1. How to enable and how to write acceptance tests for Puppet roles.
+1. How to use Hiera for node classification.
+
+Why this repository is organized in this specific way? There are reasons:
+
+1. Main point is to be able to `run bolt plan run control_repo::apply` to apply on every agent with its correct role. I.e. you don't need to keep the `agent` -> `role` mapping in your head. This allows to do `hosts` (see `spec/hosts`) unit testing and node acceptance testing as well because Puppet knows which role is assigned to the node.
+1. Another point is to keep the repo structure as close to an usual control repo as possible. I.e. you should be able to drop this repo into an environment directory and your puppet server can deal with it. Though this point is not a hard requirement here.
+1. Goals above require things to be organized in a specific way too.
+
+Note that big infrastructures with over than 100 servers are out of this repo scope. I'd say one shouldn't use push model for big infra.
 
 ## Setup
 
