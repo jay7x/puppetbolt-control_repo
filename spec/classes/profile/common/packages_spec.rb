@@ -1,8 +1,6 @@
 require 'spec_helper'
 
 describe 'Profile::Common::Packages' do
-  include_context 'clean room'
-
   packages = {
     rsync:  'installed',
     screen: 'purged',
