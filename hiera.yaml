@@ -9,8 +9,8 @@ hierarchy:
   - name: "Node-specific data"
     path: "nodes/%{trusted.certname}.yaml"
   - name: 'Common data'
-    path: 'common.yaml'
+    glob: 'common/*.yaml'
 
 plan_hierarchy:
   - name: "Bolt plans common data"
-    path: 'plans/common.yaml'
+    glob: 'plans/*.yaml'
