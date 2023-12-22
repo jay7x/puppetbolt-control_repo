@@ -49,8 +49,7 @@ end
 
 RSpec.configure do |c|
   c.module_path = module_path.join(':')
-  c.manifest_dir = File.join(project_dir, 'manifests')
-  c.manifest = File.join(c.manifest_dir, 'site.pp')
+  c.manifest = File.join(project_dir, 'manifests', 'site.pp')
   c.hiera_config = '/dev/null' # No hiera for unit tests by default
 
   # To remove on RSpec >= 4
